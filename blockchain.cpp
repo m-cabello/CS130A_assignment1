@@ -63,8 +63,8 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
     }
     // hash will be calciulated using the previous transaction's data
     cout << "In Constructor";
-    p = p->getPrevious();
     if(p){
+        p = p->getPrevious();
         this->hash = sha256(to_string(this->amount) + this->sender + this->reciever + this->getNonce());
     }else{
         hash = "NULL";
