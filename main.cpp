@@ -11,12 +11,6 @@ int main(){
         question = "Welcome to the transaction-chain application.... \n 1) Add a transaction to the chain.\n 2) Find the balance of a person.\n 3) Print the chain.\n 4) Exit. \n Which operation do you want to make? (1,2,3,4):\n" ;
         cout << question;
         cin >> answer;
-        if (isdigit(answer) == false){
-            cout << "wrong operation!";
-        }
-        if ((answer < 0) || (answer > 4)){
-            cout << "wrong input!";
-        }
         if (answer == 1){
             cout << "Integer amount of money:\n";
             int amount;
@@ -39,6 +33,8 @@ int main(){
             a->printChain();
         }else if(answer == 4){
             break;
+        }else{
+            cout << "wrong operation!";
         }
     }
     // delete *a;
