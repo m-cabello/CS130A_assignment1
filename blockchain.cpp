@@ -105,7 +105,7 @@ int Blockchain::getBalance(string person){
 
 void Blockchain::printChain(){
     Transaction *p = last;
-    printChainHelper(last);
+    printChainHelper(p);
 }
 
 void Blockchain::printChainHelper(Transaction *n){
