@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-#include <string>c
+#include <string>
 #include <openssl/sha.h>
 using namespace std;
 // I utilzied the OpenSSL C++ libraries that provided me with the SHA256 hash function
