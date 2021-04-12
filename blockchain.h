@@ -1,11 +1,12 @@
 #ifndef BLOCKCHAIN_H
 #define BLOCKCHAIN_H
 #include <openssl/sha.h>
-# include "sha256.cpp"
 # include <iostream>
 # include <sstream>
 # include <ctype.h>
 # include <cstdlib> // for rand()
+#include <iomanip>
+#include <string>
 using namespace std;
 
 class Transaction{
