@@ -48,7 +48,6 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
     amount = a;
 
     int found = 0;
-
     // While loop will be used to find nonce
     while(found == 0){
         char first = char(rand() % 26 + 97); 
