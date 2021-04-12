@@ -22,6 +22,7 @@ int main(){
             string reciever;
             cin >> reciever;
             a->add(amount, sender, reciever);
+            cout << "Finished add1";
 
         }else if (answer == 2){
             cout << "Person name\n";
