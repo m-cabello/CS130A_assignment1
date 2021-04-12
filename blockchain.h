@@ -38,6 +38,7 @@ public:
     void add(int amount, string sender, string reciever);  //adds new transaction to chain
     int getBalance(string person); // returns balance of a specific person
     void printChain(); //prints chain
+    void printChainHelper(Transaction *n);
 private:
     Transaction *last;
 };

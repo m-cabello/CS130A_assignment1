@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-   Blockchain *a = new Blockchain;
+   Blockchain a;
     while(true){
         string question;
         int answer;
@@ -21,21 +21,20 @@ int main(){
             cout << "Reciever name\n";
             string reciever;
             cin >> reciever;
-            a->add(amount, sender, reciever);
+            a.add(amount, sender, reciever);
         }else if (answer == 2){
             cout << "Person name\n";
             string person;
             cin >> person;
-            int balance = a->getBalance(person);
+            int balance = a.getBalance(person);
             cout << balance << endl;
         }else if(answer == 3){
-            a->printChain();
+            a.printChain();
         }else if(answer == 4){
             break;
         }else{
             cout << "wrong operation!";
         }
     }
-    // delete *a;
     return 0;
 }

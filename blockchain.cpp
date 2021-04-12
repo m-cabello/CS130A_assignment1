@@ -105,14 +105,17 @@ int Blockchain::getBalance(string person){
 
 void Blockchain::printChain(){
     Transaction *p = last;
-    while (p != NULL){
-        cout << "Amount: " << p->getAmount() << endl;
-        cout << "Sender: " << p->getSender() << endl;
-        cout << "Reciever: " << p->getReciever() << endl;
-        cout << "Nonce: " << p->getNonce() << endl;
-        cout << "Hash: " << p->getHash() << endl;
-        p = p->getPrevious();
-    }
-
+    printChainHelper(last);
 }
 
+void Blockchain::printChainHelper(Transaction *n){
+    if (n == NULL){
+        return;
+    }
+        printChainHelper(n->getPrevious());
+        cout << "Amount: " << n->getAmount() << endl;
+        cout << "Sender: " << n->getSender() << endl;
+        cout << "Reciever: " << n->getReciever() << endl;
+        cout << "Nonce: " << n->getNonce() << endl;
+        cout << "Hash: " << n->getHash() << endl;
+}
