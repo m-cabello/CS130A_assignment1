@@ -62,7 +62,6 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
         }
     }
     // hash will be calciulated using the previous transaction's data
-    cout << "In Constructor";
     if(p){
         p = p->getPrevious();
         this->hash = sha256(to_string(this->amount) + this->sender + this->reciever + this->getNonce());
@@ -88,10 +87,8 @@ Blockchain::~Blockchain(){
 
 // blockchain's 3 functions
 void Blockchain::add(int amount, string sender, string reciever){
-    cout << "Started add";
     Transaction *new1 = new Transaction(amount, sender, reciever, this->last);
     last = new1;
-    cout << "Finished add";
 }
 int Blockchain::getBalance(string person){
     //initial Balance
