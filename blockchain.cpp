@@ -1,6 +1,7 @@
 # include "blockchain.h"
 using namespace std;
 
+// Sha256 Implementation
 string sha256(const string str){
     unsigned char hash[SHA256_DIGEST_LENGTH];
     SHA256_CTX sha256;
@@ -13,8 +14,6 @@ string sha256(const string str){
     }
     return ss.str();
 }
-
-
 //Transaction Methods
 Transaction::Transaction(){
 

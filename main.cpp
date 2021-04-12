@@ -21,6 +21,7 @@ int main(){
             cout << "Reciever name\n";
             string reciever;
             cin >> reciever;
+            cout << "Started add1";
             a->add(amount, sender, reciever);
             cout << "Finished add1";
 
