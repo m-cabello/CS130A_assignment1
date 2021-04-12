@@ -1,5 +1,6 @@
 #ifndef BLOCKCHAIN_H
 #define BLOCKCHAIN_H
+#include <openssl/sha.h>
 # include "sha256.cpp"
 # include <iostream>
 # include <sstream>
