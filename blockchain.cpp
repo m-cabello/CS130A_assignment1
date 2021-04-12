@@ -63,7 +63,7 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
     }
     // hash will be calciulated using the previous transaction's data
     if(p){
-        this->hash = sha256(to_string(this->amount) + this->sender + this->reciever + this->getNonce());
+        this->hash = sha256((to_string(p->getAmount())) + p->getSender() + p->getReciever() + this->getNonce());
     }else{
         hash = "NULL";
     }
