@@ -4,11 +4,11 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-#include <string>
+#include <string>c
 #include <openssl/sha.h>
 using namespace std;
 // I utilzied the OpenSSL C++ libraries that provided me with the SHA256 hash function
-string sha256(const string str){
+string SHA256(const string str){
     unsigned char hash[SHA256_DIGEST_LENGTH];
     SHA256_CTX sha256;
     SHA256_Init(&sha256);

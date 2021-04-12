@@ -42,7 +42,7 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
         char second = char(rand() % 26 + 97); 
         string am = to_string(this->amount);
         string nonceGenerated = to_string(first + second);
-        string hashGenerated = sha256(am + this->sender + this->reciever + nonceGenerated);
+        string hashGenerated = SHA256(am + this->sender + this->reciever + nonceGenerated);
         if(hashGenerated.back() == '0'){
             found = 1;
             this->nonce = nonceGenerated;
@@ -51,7 +51,7 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
     // hash will be calciulated using the previous transaction's data
     p = p->getPrevious();
     if(p){
-        this->hash = sha256(to_string(this->amount) + this->sender + this->reciever + this->getNonce());
+        this->hash = SHA256(to_string(this->amount) + this->sender + this->reciever + this->getNonce());
     }else{
         hash = "NULL";
     }
