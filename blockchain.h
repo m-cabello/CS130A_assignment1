@@ -3,6 +3,8 @@
 # include "sha256.cpp"
 # include <iostream>
 # include <sstream>
+# include <ctype.h>
+# include <cstdlib> // for rand()
 using namespace std;
 
 class Transaction{
