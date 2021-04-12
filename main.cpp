@@ -8,8 +8,8 @@ int main(){
     while(true){
         string question;
         int answer;
-        question = "Welcome to the transaction-chain application.... \n 1) Add a transaction to the chain.\n 2) Find the balance of a person.\n 3) Print the chain.\n 4) Exit. \n Which operation do you want to make? (1,2,3,4):\n";
-        cout << question;
+        question = "Welcome to the transaction-chain application....\n 1) Add a transaction to the chain.\n 2) Find the balance of a person.\n 3) Print the chain.\n 4) Exit. \n Which operation do you want to make? (1,2,3,4):";
+        cout << question << flush;
         cin >> answer;
         if (answer == 1){
             cout << "Integer amount of money:"<< endl;
