@@ -72,7 +72,9 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
 }
 
 // Blockchain Methods
-Blockchain::Blockchain(){ }
+Blockchain::Blockchain(){ 
+    last = NULL;
+}
 Blockchain::~Blockchain(){
     Transaction *m = last;
     while(m!= NULL){
