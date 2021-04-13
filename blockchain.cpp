@@ -55,7 +55,7 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
         char second = char(rand() % 26 + 97); 
         string am = to_string(this->amount);
         string nonceGenerated = to_string(first + second);
-        cout << nonceGenerated << endl;
+       // cout << nonceGenerated << endl;
         string hashGenerated = sha256(am + this->sender + this->receiver + nonceGenerated);
         if(hashGenerated.back() == '0'){
             found = 1;
