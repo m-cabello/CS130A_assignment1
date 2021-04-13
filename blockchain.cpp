@@ -16,7 +16,7 @@ string sha256(const string str){
 }
 //Transaction Methods
 Transaction::Transaction(){
-
+    prev = this->getPrevious();
 }
 Transaction::~Transaction(){
     prev = NULL;
@@ -56,7 +56,6 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
         string nonceGenerated; 
         nonceGenerated += first;
         nonceGenerated += second;
-        //cout << nonceGenerated << endl;
         string hashGenerated = sha256(to_string(this->amount) + this->sender + this->receiver + nonceGenerated);
         if(hashGenerated.back() == '0'){
             found = 1;
