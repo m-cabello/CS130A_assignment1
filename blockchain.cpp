@@ -81,7 +81,6 @@ Blockchain::~Blockchain(){
         n = n->getPrevious();
         delete m;
         m = n;
-        delete n;
     }
 }
 
