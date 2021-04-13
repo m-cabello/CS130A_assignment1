@@ -19,9 +19,9 @@ int main(){
             string sender;
             cin >> sender;
             cout << "Receiver name" << endl;
-            string reciever;
-            cin >> reciever;
-            a.add(amount, sender, reciever);
+            string receiver;
+            cin >> receiver;
+            a.add(amount, sender, receiver);
         }else if (answer == 2){
             cout << "Person name" << endl;
             string person;

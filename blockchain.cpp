@@ -28,8 +28,8 @@ int Transaction::getAmount(){
 string Transaction::getSender(){
     return this->sender;
 }
-string Transaction::getReciever(){
-    return this->reciever;
+string Transaction::getReceiver(){
+    return this->receiver;
 }
 Transaction* Transaction::getPrevious(){
     return this->prev;
@@ -44,7 +44,7 @@ string Transaction::getHash(){
 Transaction::Transaction(int a, string s, string r, Transaction *p){
     prev = p;
     sender = s;
-    reciever = r;
+    receiver = r;
     amount = a;
 
     int found = 0;
@@ -54,7 +54,7 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
         char second = char(rand() % 26 + 97); 
         string am = to_string(this->amount);
         string nonceGenerated = to_string(first + second);
-        string hashGenerated = sha256(am + this->sender + this->reciever + nonceGenerated);
+        string hashGenerated = sha256(am + this->sender + this->receiver + nonceGenerated);
         if(hashGenerated.back() == '0'){
             found = 1;
             this->nonce = nonceGenerated;
@@ -62,7 +62,7 @@ Transaction::Transaction(int a, string s, string r, Transaction *p){
     }
     // hash will be calciulated using the previous transaction's data
     if(p){
-        this->hash = sha256(to_string(p->getAmount()) + p->getSender() + p->getReciever() + p->getNonce());
+        this->hash = sha256(to_string(p->getAmount()) + p->getSender() + p->getReceiver() + p->getNonce());
     }else{
         hash = "NULL";
     }
@@ -84,8 +84,8 @@ Blockchain::~Blockchain(){
 }
 
 // blockchain's 3 functions
-void Blockchain::add(int amount, string sender, string reciever){
-    Transaction *new1 = new Transaction(amount, sender, reciever, this->last);
+void Blockchain::add(int amount, string sender, string receiver){
+    Transaction *new1 = new Transaction(amount, sender, receiver, this->last);
     last = new1;
 }
 int Blockchain::getBalance(string person){
@@ -95,7 +95,7 @@ int Blockchain::getBalance(string person){
     while( p != NULL){
         if(p->getSender() == person){
             total = total - p->getAmount();
-        }else if(p->getReciever() == person){
+        }else if(p->getReceiver() == person){
             total = total + p->getAmount();
         }
         p = p->getPrevious();
@@ -115,7 +115,7 @@ void Blockchain::printChainHelper(Transaction *n){
         printChainHelper(n->getPrevious());
         cout << "Amount: " << n->getAmount() << endl;
         cout << "Sender: " << n->getSender() << endl;
-        cout << "Receiver: " << n->getReciever() << endl;
+        cout << "Receiver: " << n->getReceiver() << endl;
         cout << "Nonce: " << n->getNonce() << endl;
         cout << "Hash: " << n->getHash() << endl;
 }

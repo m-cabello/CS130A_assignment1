@@ -19,13 +19,13 @@ public:
     string getNonce();
     string getHash();
     string getSender();
-    string getReciever();
+    string getReceiver();
     Transaction *getPrevious();
 
 private:
     Transaction *prev; 
     string sender;
-    string reciever;
+    string receiver;
     int amount;
     string nonce;
     string hash;
@@ -35,7 +35,7 @@ class Blockchain{
 public:
     Blockchain();
     ~Blockchain();
-    void add(int amount, string sender, string reciever);  //adds new transaction to chain
+    void add(int amount, string sender, string receiver);  //adds new transaction to chain
     int getBalance(string person); // returns balance of a specific person
     void printChain(); //prints chain
     void printChainHelper(Transaction *n);
