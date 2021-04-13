@@ -9,7 +9,7 @@ int main(){
         string question;
         int answer;
         question = "Welcome to the transaction-chain application....\n1) Add a transaction to the chain.\n2) Find balance of a person.\n3) Print the chain.\n4) Exit.\nWhich operation do you want to make? (1,2,3,4):";
-        cout << question << endl;
+        cout << question << endl << flush;
         cin >> answer;
         if (answer == 1){
             cout << "Integer amount of money:"<< endl;
