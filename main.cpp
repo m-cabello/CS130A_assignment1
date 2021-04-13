@@ -18,7 +18,7 @@ int main(){
             cout << "Sender name"<< endl;
             string sender;
             cin >> sender;
-            cout << "Reciever name" << endl;
+            cout << "Receiver name" << endl;
             string reciever;
             cin >> reciever;
             a.add(amount, sender, reciever);

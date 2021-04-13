@@ -115,7 +115,7 @@ void Blockchain::printChainHelper(Transaction *n){
         printChainHelper(n->getPrevious());
         cout << "Amount: " << n->getAmount() << endl;
         cout << "Sender: " << n->getSender() << endl;
-        cout << "Reciever: " << n->getReciever() << endl;
+        cout << "Receiver: " << n->getReciever() << endl;
         cout << "Nonce: " << n->getNonce() << endl;
         cout << "Hash: " << n->getHash() << endl;
 }
